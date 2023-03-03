@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: manageperson
+  profiles:
+    active: local
+
+
+
