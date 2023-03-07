@@ -19,7 +19,6 @@ public class Address implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @Column(nullable = false)
     private String street;
 
@@ -27,7 +26,7 @@ public class Address implements Serializable {
     private String cep;
 
     @Column(nullable = false)
-    private String number;
+    private Integer number;
 
     @Column(nullable = false)
     private String city;
@@ -35,7 +34,7 @@ public class Address implements Serializable {
     @Column(nullable = false)
     private Boolean mainAddress;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "person_id")
     private Person person;
 

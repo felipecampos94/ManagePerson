@@ -3,7 +3,6 @@ package br.com.manageperson.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,8 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -32,7 +32,7 @@ public class Person implements Serializable {
     private LocalDate birthDate;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "person")
-    private List<Address> addresses;
+    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER)
+    private Set<Address> addresses = new HashSet<>();
 
 }
