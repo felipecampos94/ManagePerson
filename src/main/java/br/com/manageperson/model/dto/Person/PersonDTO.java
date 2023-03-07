@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,6 +27,6 @@ public class PersonDTO {
     @NotNull(message = "The Bith Date is required.")
     private LocalDate birthDate;
 
-    private List<AddressViewDTO> addresses;
+    private Set<AddressViewDTO> addresses = new HashSet<>();
 
 }

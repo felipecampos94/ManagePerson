@@ -18,11 +18,11 @@ public class AddressDTO {
     @NotNull(message = "The Street is required.")
     private String street;
 
-    @NotNull(message = "The Numer is required.")
-    private Integer number;
-
     @NotNull(message = "The CEP is required.")
     private String cep;
+
+    @NotNull(message = "The Numer is required.")
+    private Integer number;
 
     @NotNull(message = "The City is required.")
     private String city;
